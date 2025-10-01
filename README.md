@@ -25,23 +25,39 @@ The models demonstrate that while LSTMs capture some temporal structure in SPY d
 
 ---
 
-## 📊 Results (placeholders)
-- **Regression**  
-  RMSE = `XX.X` | MAE = `YY.Y` | MAPE = `ZZ%`  
-  ![Actual vs Predicted](artifacts/actual_vs_predicted.png)
+## ✅ Implemented Steps
 
-- **Classification**  
-  Accuracy = `0.XX` | F1 = `0.XX` | ROC-AUC = `0.XX`  
-  ![Confusion Matrix](artifacts/confusion_matrix.png)  
-  ![ROC Curve](artifacts/roc_curve.png)
+- **Clean split (no leakage):** Scaler is fit only on training data, then applied to validation/test sets.  
+- **Separate tracks:** Regression (predict price) and Classification (predict direction) are handled in distinct sections.  
+- **Baselines:** Added naïve predictor for regression and logistic regression for classification.  
+- **Evaluation plots:** Residuals histogram for regression, ROC curve and confusion matrix for classification — all saved as PNGs in `/artifacts/`.  
+- **README text printer:** Notebook generates Markdown-ready results and links for easy pasting into this README.  
+- **Stretch (returns):** Experimental return-prediction pipeline included for more stable modeling.  
+
+---
+
+## 📊 Results
+
+### Regression
+- **LSTM:** RMSE = `XX.X` | MAE = `YY.Y`  
+- **Naïve baseline:** RMSE = `AA.A` | MAE = `BB.B`  
+
+[![Actual vs Predicted](artifacts/actual_vs_predicted.png)](artifacts/actual_vs_predicted.png)  
+[![Residuals Histogram](artifacts/residuals_hist.png)](artifacts/residuals_hist.png)
+
+### Classification (Baseline)
+- **Logistic Regression:** ROC-AUC = `0.XX`  
+
+[![ROC Curve](artifacts/roc_curve.png)](artifacts/roc_curve.png)  
+[![Confusion Matrix](artifacts/confusion_matrix.png)](artifacts/confusion_matrix.png)
 
 ---
 
 ## ⚙️ Tech Stack
-- Python, NumPy, Pandas
-- TensorFlow / Keras (LSTM)
-- Scikit-learn
-- Matplotlib, Plotly
-- Alpha Vantage API 
+- Python, NumPy, Pandas  
+- TensorFlow / Keras (LSTM)  
+- Scikit-learn  
+- Matplotlib, Plotly (with Kaleido for static saves)  
+- Alpha Vantage API (data source)  
 
 ---
