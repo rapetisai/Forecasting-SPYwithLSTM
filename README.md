@@ -58,6 +58,6 @@ The models demonstrate that while LSTMs capture some temporal structure in SPY d
 - TensorFlow / Keras (LSTM)  
 - Scikit-learn  
 - Matplotlib, Plotly (with Kaleido for static saves)  
-- Alpha Vantage API (data source)  
+- Alpha Vantage API 
 
 ---
